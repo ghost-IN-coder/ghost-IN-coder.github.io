@@ -3,24 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - Ghost Portfolio</title>
+    <title>Coming Soon - Ghost Projects</title>
     <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
         body {
             background-color: #000;
             color: #00ff00;
             font-family: 'Courier New', monospace;
             text-align: center;
             padding: 50px;
+            background-image: url('https://i.pinimg.com/originals/2c/e4/d0/2ce4d0614263f4d25507dd339137a8a8.gif');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            opacity: 0.3; /* Translucent effect */
+            animation: fadeIn 2s ease-in-out;
         }
 
-        .projects {
-            font-size: 1.5rem;
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #00ff00;
+            animation: pulse 2s infinite;
+        }
+
+        .header h1 {
+            color: #00ff00;
+            font-size: 2rem;
+            margin-left: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 5px #00ff00;
+            }
+            50% {
+                box-shadow: 0 0 20px #00ff00;
+            }
+            100% {
+                box-shadow: 0 0 5px #00ff00;
+            }
+        }
+
+        /* Content Section */
+        .content {
+            margin-top: 40px;
+            font-size: 1.2rem;
+            color: #00ff00;
+            animation: typing 3s steps(50) 1s 1 normal both;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #00ff00;
+            display: inline-block;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .project-guide {
             margin-top: 30px;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #00ff00;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            box-shadow: 0 0 10px #00ff00;
         }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .project-guide h2 {
+            color: #00ff00;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-guide p {
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         footer {
@@ -31,19 +123,43 @@
             color: #fff;
             text-align: center;
             padding: 20px;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
-    <h1>Coming Soon!</h1>
-    <div class="projects">
-        <p>🚀 Project: Building an OS</p>
-        <p>⚙️ Aiming for a lightweight, customizable Operating System.</p>
-        <p>💻 Stay tuned for development updates.</p>
+
+    <!-- Header with Profile Drawing -->
+    <div class="header">
+        <img src="profile.jpg" alt="Ghost-IN-Coder">
+        <h1>Ghost Projects</h1>
     </div>
 
+    <!-- Content with Typing Effect -->
+    <div class="content">
+        Building an OS from Scratch...
+    </div>
+
+    <!-- Project Guide Section -->
+    <div class="project-guide">
+        <h2>How to Build an Operating System</h2>
+        <p>Building your own operating system is not only fun but also an incredibly challenging task. The process involves:</p>
+        <ul>
+            <li><strong>Step 1: Learn the Basics</strong> - Before you dive into OS development, it's essential to have a good understanding of low-level programming languages like C and Assembly.</li>
+            <li><strong>Step 2: Set Up Your Environment</strong> - You will need a cross-compiler to build the OS code. Setting up a proper build environment is crucial for the development of your OS.</li>
+            <li><strong>Step 3: Create a Bootloader</strong> - The bootloader is responsible for loading the kernel into memory when the computer is powered on.</li>
+            <li><strong>Step 4: Develop the Kernel</strong> - The kernel is the core part of your operating system. You'll need to write the kernel in C or Assembly, with functions like memory management, process scheduling, and handling system calls.</li>
+            <li><strong>Step 5: Implement File Systems</strong> - After the kernel, you'll implement the file system, allowing the OS to manage files and directories.</li>
+            <li><strong>Step 6: Add User Interface (UI)</strong> - Building a user-friendly interface is optional, but a graphical user interface (GUI) makes the OS much more appealing and usable.</li>
+            <li><strong>Step 7: Test and Debug</strong> - Testing is key to success. Continuously debug your OS to remove errors and improve performance.</li>
+        </ul>
+        <p>Developing an OS is a big task, but with persistence and patience, it is totally possible!</p>
+    </div>
+
+    <!-- Footer -->
     <footer>
         &copy; 2025 Ghost-IN-Coder. Made with 💻 and ☕.
     </footer>
+
 </body>
 </html>
