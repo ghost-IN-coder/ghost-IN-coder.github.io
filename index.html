@@ -31,6 +31,62 @@
             background-size: cover;
         }
 
+        /* Title Bar */
+        .title-bar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 2px solid #00ff00;
+        }
+
+        .title-bar .site-title {
+            font-size: 1.5rem;
+            color: #00ff00; /* Neon green for hacker style */
+            font-weight: bold;
+        }
+
+        .title-bar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .title-bar .nav-links a:hover {
+            color: #00ff00;
+        }
+
+        /* Profile Button */
+        .profile-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00ff00;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0px 0px 15px #00ff00;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .profile-button:hover {
+            background-color: #fff;
+            color: #00ff00;
+            box-shadow: 0px 0px 25px #00ff00;
+        }
+
         /* Main Heading */
         .main-heading {
             text-align: center;
@@ -57,46 +113,6 @@
             right: 20%;
         }
 
-        /* Profile Section */
-        .profile-section {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            transition: transform 0.5s ease;
-        }
-
-        .profile-section:hover {
-            transform: scale(1.1);
-        }
-
-        .profile-img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-img:hover {
-            transform: rotate(360deg);
-        }
-
-        .profile-name {
-            margin-left: 15px;
-            font-size: 1.5rem;
-            color: #ff4500;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .profile-name:hover {
-            text-shadow: 0 0 10px #ff4500;
-            animation: pulse 1s infinite;
-        }
-
         /* About Section */
         .about-section {
             margin: 50px auto;
@@ -110,6 +126,24 @@
             background: rgba(0, 0, 0, 0.7); /* Transparent black background */
             border: 1px solid #fff;
             border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Animations */
@@ -139,12 +173,13 @@
     <!-- Background -->
     <div class="bg-code"></div>
 
-    <!-- Profile Section -->
-    <div class="profile-section">
-        <a href="https://github.com/ghost-IN-coder" target="_blank">
-            <img src="profile.jpg" alt="Ghost-IN-Coder" class="profile-img">
-        </a>
-        <a href="https://github.com/ghost-IN-coder" target="_blank" class="profile-name">Ghost-IN-Coder</a>
+    <!-- Title Bar -->
+    <div class="title-bar">
+        <div class="site-title">GHOST</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="https://github.com/ghost-IN-coder" target="_blank">GitHub</a>
+        </div>
     </div>
 
     <!-- Main Heading -->
@@ -155,19 +190,24 @@
     </div>
 
     <!-- About Section -->
-    <div class="about-section">
-        <span>👋 Hi there! I am <strong>Ghost-IN-Coder</strong>, a passionate developer and Mathematics enthusiast. <br>
+    <div id="about" class="about-section">
+        👋 Hi there! I am <strong>Ghost-IN-Coder</strong>, a passionate developer and Mathematics enthusiast. <br>
         I enjoy solving complex problems and creating elegant solutions. <br><br>
         🔥 <strong>What I believe:</strong><br>
         - The world of code is infinite. Keep exploring.<br>
         - Challenges are opportunities for growth.<br>
         - Always be curious and hungry to learn.<br><br>
-        💻 Let's build, break, and innovate together! 🚀</span>
+        💻 Let's build, break, and innovate together! 🚀
     </div>
+
+    <!-- Profile Button -->
+    <button class="profile-button" onclick="window.open('https://github.com/ghost-IN-coder', '_blank')">
+        View My GitHub
+    </button>
 
     <!-- Footer -->
     <footer>
-        <p style="text-align:center; color: #00ff00;">© 2025 Ghost-IN-Coder | Built with 💻 and ☕</p>
+        &copy; 2025 Ghost-IN-Coder. Made with 💻 and ☕. Connect with me on <a href="https://github.com/ghost-IN-coder" target="_blank">GitHub</a>.
     </footer>
 </body>
 </html>
