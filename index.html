@@ -15,8 +15,8 @@
         /* Body and Background */
         body {
             background-color: #000; /* Pure black background */
-            color: #00ff00; /* Hacker-style green text */
-            font-family: 'Courier New', monospace; /* Hacker font */
+            color: #fff; /* White text for better readability */
+            font-family: 'Courier New', monospace; /* Hacker-style font */
             overflow-x: hidden;
         }
 
@@ -27,30 +27,37 @@
             position: absolute;
             top: 10px;
             left: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-section:hover {
+            transform: scale(1.1);
         }
 
         .profile-img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            border: 2px solid #00ff00;
+            border: 2px solid #fff;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
 
         .profile-img:hover {
-            transform: scale(1.2);
+            transform: rotate(360deg);
         }
 
         .profile-name {
             margin-left: 15px;
             font-size: 1.5rem;
-            color: #00ff00;
+            color: #ff4500;
             cursor: pointer;
+            font-weight: bold;
         }
 
         .profile-name:hover {
-            text-decoration: underline;
+            text-shadow: 0 0 10px #ff4500;
+            animation: pulse 1s infinite;
         }
 
         /* Main Heading */
@@ -59,8 +66,8 @@
             margin-top: 150px;
             font-size: 5rem;
             font-weight: bold;
-            color: #00ff00;
-            background: url('https://i.imgur.com/CAVErGA.png') no-repeat center; /* AK-47 image */
+            color: #ff4500; /* Vibrant orange for GHOST font */
+            background: url('https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480') no-repeat center; /* AK-47 weapon */
             background-size: contain;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -73,11 +80,13 @@
             text-align: center;
             width: 80%;
             font-size: 1.2rem;
-            color: #00ff00;
-            animation: typewriter 4s steps(60, end);
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 2px solid #00ff00;
+            color: #f0f0f0; /* Light gray for easier readability */
+            animation: fadeIn 3s ease;
+            white-space: pre-wrap;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7); /* Transparent black background */
+            border: 1px solid #fff;
+            border-radius: 10px;
         }
 
         /* Background Animation */
@@ -88,8 +97,9 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: url('https://i.imgur.com/NkHlJ0w.gif') repeat; /* Animated coding GIF */
-            opacity: 0.2;
+            background: url('https://media.tenor.com/cKgOapMuyWcAAAAM/coding-developer-code.gif') repeat; /* Coding GIF */
+            background-size: cover;
+            opacity: 0.15;
         }
 
         /* Footer */
@@ -97,12 +107,12 @@
             text-align: center;
             padding: 20px;
             background-color: #111;
-            color: #00ff00;
+            color: #fff;
             font-size: 0.9rem;
         }
 
         footer a {
-            color: #00ff00;
+            color: #ff4500;
             text-decoration: none;
         }
 
@@ -123,12 +133,24 @@
             }
         }
 
-        @keyframes typewriter {
+        @keyframes fadeIn {
             from {
-                width: 0;
+                opacity: 0;
             }
             to {
-                width: 100%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 10px #ff4500;
+            }
+            50% {
+                text-shadow: 0 0 20px #ff4500;
+            }
+            100% {
+                text-shadow: 0 0 10px #ff4500;
             }
         }
     </style>
@@ -147,8 +169,8 @@
 
     <!-- About Section -->
     <div class="about-section">
-        Hello, I am Ghost-IN-Coder, a Mathematics Enthusiast and Developer. I thrive on solving challenges and building cool projects. 
-        <br>Be bold, be relentless, and never stop learning. The world is yours to hack.
+        👋 Hello, I am Ghost-IN-Coder, a Mathematics Enthusiast and Developer. I thrive on solving challenges and building cool projects. 
+        <br><br>💡 Be bold, be relentless, and never stop learning. The world is yours to hack. 🚀
     </div>
 
     <!-- Background Code Animation -->
