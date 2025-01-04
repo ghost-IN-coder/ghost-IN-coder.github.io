@@ -12,21 +12,22 @@
             box-sizing: border-box;
         }
 
-        /* Loading Screen */
+        /* Loading Screen (Hacker Style) */
         #loading {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #000;
+            background-color: black;
             color: #00ff00;
+            font-family: 'Courier New', monospace;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Courier New', monospace;
-            font-size: 2rem;
             z-index: 1000;
+            flex-direction: column;
+            text-align: center;
         }
 
         #loading span {
@@ -41,7 +42,6 @@
 
         /* Body */
         body {
-            cursor: default;
             background-color: #000;
             color: #fff;
             font-family: 'Courier New', monospace;
@@ -49,15 +49,12 @@
             animation: fadeIn 2s ease-in;
             background-image: url('https://i.pinimg.com/originals/2c/e4/d0/2ce4d0614263f4d25507dd339137a8a8.gif');
             background-size: cover;
+            min-height: 100vh;
         }
 
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         /* Title Bar */
@@ -84,6 +81,7 @@
             color: #00ff00;
             font-weight: bold;
             margin-left: 10px;
+            cursor: pointer;
         }
 
         /* Coming Soon Section */
@@ -180,6 +178,18 @@
             50% { border-color: transparent; }
         }
 
+        /* Footer */
+        footer {
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 1rem;
+        }
+
         /* Animations */
         @keyframes pulse {
             0% {
@@ -197,7 +207,10 @@
 <body>
     <!-- Loading Screen -->
     <div id="loading">
-        <div id="progress">Loading 0%</div>
+        <div id="progress">
+            <span>Loading...</span><br>
+            <span id="loading-text">Progress: 0%</span>
+        </div>
     </div>
 
     <!-- Title Bar -->
@@ -226,19 +239,19 @@
 
     <!-- Footer -->
     <footer>
-        &copy; 2025 Ghost-IN-Coder. Made with 💻 and ☕. Connect with me on <a href="https://github.com/ghost-IN-coder" target="_blank">GitHub</a>.
+        &copy; 2025 Ghost-IN-Coder. Made with 💻 and ☕. Connect with me on <a href="https://github.com/ghost-IN-coder" target="_blank" style="color: #00ff00;">GitHub</a>.
     </footer>
 
     <script>
         // Loading Screen with Progress
         let progress = 0;
         const loadingElement = document.getElementById('loading');
-        const progressText = document.getElementById('progress');
+        const progressText = document.getElementById('loading-text');
 
         function updateLoadingScreen() {
             if (progress < 100) {
                 progress++;
-                progressText.innerText = `Loading ${progress}%`;
+                progressText.innerText = `Progress: ${progress}%`;
                 setTimeout(updateLoadingScreen, 30); // Simulate loading process
             } else {
                 loadingElement.style.display = 'none'; // Hide loading screen
