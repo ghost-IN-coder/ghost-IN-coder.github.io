@@ -27,39 +27,50 @@
             align-items: center;
             justify-content: flex-start;
             padding-top: 20px;
+            overflow: hidden;
         }
 
-        /* Profile Drawing */
-        .profile-drawing {
-            width: 120px;
-            height: 120px;
+        /* Avatar Dot Animation */
+        .avatar-dot {
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            border: 3px solid #00ff00;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
+            background-color: #00ff00;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: dotAnimation 2s linear forwards;
         }
 
-        @keyframes pulse {
+        @keyframes dotAnimation {
             0% {
-                box-shadow: 0 0 5px #00ff00;
+                transform: translate(-50%, -50%) scale(1);
             }
             50% {
-                box-shadow: 0 0 20px #00ff00;
+                transform: translate(-50%, -50%) scale(3);
             }
             100% {
-                box-shadow: 0 0 5px #00ff00;
+                transform: translate(-50%, -50%) scale(10);
+                opacity: 0;
             }
         }
 
-        /* Heading */
-        h1 {
-            color: #00ff00;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: bold;
+        /* Content Fade In */
+        .content {
+            display: none;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 2s; /* Wait for the avatar animation to finish */
+            text-align: center;
         }
 
-        /* Project Guide Section */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Project Description */
         .project-guide {
             font-size: 1.2rem;
             color: #00ff00;
@@ -73,29 +84,63 @@
 
         .project-guide h2 {
             font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .project-guide p {
             font-size: 1rem;
             line-height: 1.5;
         }
+
+        /* Coder Avatar */
+        .avatar-image {
+            width: 100px;
+            height: 100px;
+            background-color: #00ff00;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+
     </style>
 </head>
 <body>
-    <!-- Profile Drawing -->
-    <div class="profile-drawing">
-        <!-- Add a profile image or drawing here -->
-        <img src="profile.jpg" alt="Profile Drawing" style="width: 100%; height: 100%; border-radius: 50%;">
+
+    <!-- Dot Animation -->
+    <div class="avatar-dot"></div>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="avatar-image"></div>
+        <h1>How to Build an OS from Scratch</h1>
+        <div class="project-guide">
+            <h2>Step-by-Step Guide</h2>
+            <p>Building an operating system from scratch requires understanding the low-level details of computer architecture and hardware. We will guide you through the basics of:</p>
+            <ul>
+                <li>Setting up a virtual machine to test your OS</li>
+                <li>Writing bootloaders and kernel</li>
+                <li>Understanding file systems</li>
+                <li>Implementing system calls</li>
+                <li>Memory management</li>
+            </ul>
+            <p>For example, we'll demonstrate how to:</p>
+            <pre><code>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    printf("Welcome to Ghost OS!\n");
+    return 0;
+}
+            </code></pre>
+        </div>
     </div>
 
-    <!-- Heading -->
-    <h1>Coming Soon: Ghost Projects</h1>
+    <script>
+        // After the dot animation ends, show the content
+        setTimeout(function() {
+            document.querySelector('.content').style.display = 'block';
+        }, 2000); // Time delay to match animation
 
-    <!-- Project Guide Section -->
-    <div class="project-guide">
-        <h2>How to Build an OS</h2>
-        <p>We are currently working on building an OS from scratch...</p>
-        <p>Stay tuned for more updates!</p>
-    </div>
+    </script>
 </body>
 </html>
