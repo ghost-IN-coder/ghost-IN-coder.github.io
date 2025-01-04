@@ -14,10 +14,47 @@
 
         /* Body and Background */
         body {
-            background-color: #000; /* Pure black background */
-            color: #fff; /* White text for better readability */
+            background-color: #000; /* Black background */
+            color: #fff;
             font-family: 'Courier New', monospace; /* Hacker-style font */
             overflow-x: hidden;
+        }
+
+        .bg-code {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://i.pinimg.com/originals/2c/e4/d0/2ce4d0614263f4d25507dd339137a8a8.gif') no-repeat center;
+            background-size: cover;
+        }
+
+        /* Main Heading */
+        .main-heading {
+            text-align: center;
+            font-size: 5rem;
+            font-weight: bold;
+            color: #00ff00; /* Neon green for hacker effect */
+            animation: glitch 2s infinite;
+            position: relative;
+            margin-top: 150px;
+        }
+
+        .ak47 {
+            width: 150px;
+            position: absolute;
+            top: 30%;
+            transform: rotateY(180deg); /* Flip one AK-47 */
+        }
+
+        .ak47-left {
+            left: 20%;
+        }
+
+        .ak47-right {
+            right: 20%;
         }
 
         /* Profile Section */
@@ -60,28 +97,14 @@
             animation: pulse 1s infinite;
         }
 
-        /* Main Heading */
-        .main-heading {
-            text-align: center;
-            margin-top: 150px;
-            font-size: 5rem;
-            font-weight: bold;
-            color: #ff4500; /* Vibrant orange for GHOST font */
-            background: url('https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480') no-repeat center; /* AK-47 weapon */
-            background-size: contain;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glitch 2s infinite;
-        }
-
         /* About Section */
         .about-section {
             margin: 50px auto;
-            text-align: center;
+            text-align: left;
             width: 80%;
             font-size: 1.2rem;
             color: #f0f0f0; /* Light gray for easier readability */
-            animation: fadeIn 3s ease;
+            animation: typewriter 4s steps(60, end);
             white-space: pre-wrap;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7); /* Transparent black background */
@@ -89,73 +112,33 @@
             border-radius: 10px;
         }
 
-        /* Background Animation */
-        .bg-code {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: url('https://media.tenor.com/cKgOapMuyWcAAAAM/coding-developer-code.gif') repeat; /* Coding GIF */
-            background-size: cover;
-            opacity: 0.15;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #111;
-            color: #fff;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #ff4500;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
         /* Animations */
         @keyframes glitch {
             0% {
-                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+                text-shadow: 2px 2px #00ff00, -2px -2px #009900;
             }
             50% {
-                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+                text-shadow: -2px -2px #00ff00, 2px 2px #009900;
             }
             100% {
-                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+                text-shadow: 2px 2px #00ff00, -2px -2px #009900;
             }
         }
 
-        @keyframes fadeIn {
+        @keyframes typewriter {
             from {
-                opacity: 0;
+                width: 0;
             }
             to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                text-shadow: 0 0 10px #ff4500;
-            }
-            50% {
-                text-shadow: 0 0 20px #ff4500;
-            }
-            100% {
-                text-shadow: 0 0 10px #ff4500;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Background -->
+    <div class="bg-code"></div>
+
     <!-- Profile Section -->
     <div class="profile-section">
         <a href="https://github.com/ghost-IN-coder" target="_blank">
@@ -165,20 +148,26 @@
     </div>
 
     <!-- Main Heading -->
-    <h1 class="main-heading">GHOST</h1>
+    <div>
+        <img src="https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480" alt="AK-47" class="ak47 ak47-left">
+        <h1 class="main-heading">GHOST</h1>
+        <img src="https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480" alt="AK-47" class="ak47 ak47-right">
+    </div>
 
     <!-- About Section -->
     <div class="about-section">
-        👋 Hello, I am Ghost-IN-Coder, a Mathematics Enthusiast and Developer. I thrive on solving challenges and building cool projects. 
-        <br><br>💡 Be bold, be relentless, and never stop learning. The world is yours to hack. 🚀
+        <span>👋 Hi there! I am <strong>Ghost-IN-Coder</strong>, a passionate developer and Mathematics enthusiast. <br>
+        I enjoy solving complex problems and creating elegant solutions. <br><br>
+        🔥 <strong>What I believe:</strong><br>
+        - The world of code is infinite. Keep exploring.<br>
+        - Challenges are opportunities for growth.<br>
+        - Always be curious and hungry to learn.<br><br>
+        💻 Let's build, break, and innovate together! 🚀</span>
     </div>
-
-    <!-- Background Code Animation -->
-    <div class="bg-code"></div>
 
     <!-- Footer -->
     <footer>
-        &copy; 2025 Ghost-IN-Coder. Made with 💻 and ☕. Connect with me on <a href="https://github.com/ghost-IN-coder" target="_blank">GitHub</a>.
+        <p style="text-align:center; color: #00ff00;">© 2025 Ghost-IN-Coder | Built with 💻 and ☕</p>
     </footer>
 </body>
 </html>
