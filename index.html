@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GHOST | Portfolio</title>
+    <title>GHOST Portfolio</title>
     <style>
         /* General Reset */
         * {
@@ -12,23 +12,62 @@
             box-sizing: border-box;
         }
 
-        /* Body and Background */
-        body {
-            background-color: #000; /* Black background */
-            color: #fff;
-            font-family: 'Courier New', monospace; /* Hacker-style font */
-            overflow-x: hidden;
-        }
-
-        .bg-code {
+        /* Loading Screen */
+        #loading {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            background: url('https://i.pinimg.com/originals/2c/e4/d0/2ce4d0614263f4d25507dd339137a8a8.gif') no-repeat center;
-            background-size: cover;
+            background-color: #000;
+            color: #00ff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', monospace;
+            font-size: 2rem;
+            z-index: 1000;
+        }
+
+        #loading span {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Body */
+        body {
+            cursor: none;
+            background-color: #000; /* Black background */
+            color: #fff;
+            font-family: 'Courier New', monospace; /* Hacker-style font */
+            overflow-x: hidden;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Cursor */
+        .cursor {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #00ff00;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
         }
 
         /* Title Bar */
@@ -57,96 +96,56 @@
             margin-left: 10px;
         }
 
-        /* Profile Section */
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+        /* Coming Soon Section */
+        #coming-soon {
+            padding: 50px 20px;
             text-align: center;
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid #00ff00;
-            animation: pulse 2s infinite;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.1);
-        }
-
-        .profile-name {
-            margin-top: 20px;
-            font-size: 2rem;
+        #coming-soon h2 {
+            font-size: 2.5rem;
             color: #00ff00;
-            font-weight: bold;
-            text-shadow: 0 0 10px #00ff00;
+            margin-bottom: 20px;
         }
 
-        .profile-button {
-            margin-top: 20px;
-            background-color: #00ff00;
-            color: #000;
-            font-weight: bold;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            box-shadow: 0px 0px 10px #00ff00;
-            transition: all 0.3s ease;
+        .projects {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
         }
 
-        .profile-button:hover {
-            background-color: #fff;
+        .quote {
+            font-style: italic;
+            font-size: 1.5rem;
             color: #00ff00;
-            box-shadow: 0px 0px 20px #00ff00;
+            animation: fadeInUp 2s ease-in;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #111;
-            color: #fff;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #00ff00;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Animations */
-        @keyframes pulse {
+        @keyframes fadeInUp {
             0% {
-                box-shadow: 0 0 5px #00ff00;
-            }
-            50% {
-                box-shadow: 0 0 20px #00ff00;
+                opacity: 0;
+                transform: translateY(20px);
             }
             100% {
-                box-shadow: 0 0 5px #00ff00;
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        Decrypting<span>...</span>
+    </div>
+
     <!-- Background -->
     <div class="bg-code"></div>
 
     <!-- Title Bar -->
     <div class="title-bar">
         <img src="https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480" alt="AK-47">
-        <div class="site-title">GHOST</div>
+        <div class="site-title">GHOST Portfolio</div>
     </div>
 
     <!-- Profile Section -->
@@ -156,9 +155,48 @@
         <button class="profile-button" onclick="window.open('https://github.com/ghost-IN-coder', '_blank')">View My GitHub</button>
     </div>
 
+    <!-- Coming Soon Section -->
+    <div id="coming-soon">
+        <h2>Coming Soon</h2>
+        <div class="projects">
+            <ul>
+                <li>🚀 Building an AI-driven Portfolio Generator</li>
+                <li>⚙️ Creating an Advanced Automation Toolkit</li>
+                <li>🛡️ Developing a Cybersecurity Monitoring Tool</li>
+                <li>📱 Launching a Responsive Mobile App for Coders</li>
+                <li>🌌 Experimenting with Quantum Computing Algorithms</li>
+            </ul>
+        </div>
+        <p class="quote">"The best way to predict the future is to invent it." – Alan Kay</p>
+    </div>
+
     <!-- Footer -->
     <footer>
         &copy; 2025 Ghost-IN-Coder. Made with 💻 and ☕. Connect with me on <a href="https://github.com/ghost-IN-coder" target="_blank">GitHub</a>.
     </footer>
+
+    <script>
+        // Loading Screen
+        window.onload = () => {
+            document.getElementById('loading').style.display = 'none';
+        };
+
+        // Dynamic Cursor
+        const cursor = document.createElement('div');
+        cursor.classList.add('cursor');
+        document.body.appendChild(cursor);
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
+
+        // Dynamic Title
+        const titles = ["Ghost Portfolio", "Code. Create. Inspire.", "Welcome to Ghost's World"];
+        let i = 0;
+        setInterval(() => {
+            document.title = titles[i];
+            i = (i + 1) % titles.length;
+        }, 3000);
+    </script>
 </body>
 </html>
