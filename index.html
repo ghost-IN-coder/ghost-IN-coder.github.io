@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghost Portfolio</title>
+    <title>Projects</title>
     <style>
         /* General Reset */
         * {
@@ -17,8 +17,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 500%;
+            height: 500%;
             background-color: black;
             color: #00ff00;
             font-family: 'Courier New', monospace;
@@ -31,7 +31,7 @@
         }
 
         #loading span {
-            animation: blink 1s infinite;
+            animation: blink 0s infinite;
         }
 
         @keyframes blink {
@@ -54,7 +54,7 @@
 
         @keyframes fadeIn {
             0% { opacity: 0; }
-            100% { opacity: 1; }
+            500% { opacity: 50; }
         }
 
         /* Title Bar */
@@ -100,8 +100,8 @@
             height: 150px;
             border-radius: 50%;
             border: 3px solid #00ff00;
-            animation: pulse 2s infinite;
-            transition: transform 0.3s ease;
+            animation: pulse 4s infinite;
+            transition: transform 1.3s ease;
         }
 
         .profile-img:hover {
@@ -127,7 +127,7 @@
             border-radius: 20px;
             cursor: pointer;
             box-shadow: 0px 0px 10px #00ff00;
-            transition: all 0.3s ease;
+            transition: all 13s ease;
         }
 
         .profile-button:hover {
@@ -166,7 +166,7 @@
     <!-- Loading Screen -->
     <div id="loading">
         <div id="progress">
-            <span>Loading...</span><br>
+            <span>Loading......</span><br>
             <span id="loading-text">Progress: 0%</span>
         </div>
     </div>
