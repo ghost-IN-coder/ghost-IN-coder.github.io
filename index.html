@@ -40,92 +40,71 @@
             left: 0;
             z-index: 100;
             display: flex;
-            justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             border-bottom: 2px solid #00ff00;
         }
 
-        .title-bar .site-title {
+        .title-bar img {
+            width: 50px;
+            height: auto;
+        }
+
+        .site-title {
             font-size: 1.5rem;
-            color: #00ff00; /* Neon green for hacker style */
-            font-weight: bold;
-        }
-
-        .title-bar .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .title-bar .nav-links a:hover {
             color: #00ff00;
+            font-weight: bold;
+            margin-left: 10px;
         }
 
-        /* Profile Button */
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00ff00;
+            animation: pulse 2s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-name {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #00ff00;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
         .profile-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+            margin-top: 20px;
             background-color: #00ff00;
             color: #000;
             font-weight: bold;
             border: none;
-            padding: 15px 20px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 20px;
             cursor: pointer;
-            box-shadow: 0px 0px 15px #00ff00;
+            box-shadow: 0px 0px 10px #00ff00;
             transition: all 0.3s ease;
-            z-index: 100;
         }
 
         .profile-button:hover {
             background-color: #fff;
             color: #00ff00;
-            box-shadow: 0px 0px 25px #00ff00;
-        }
-
-        /* Main Heading */
-        .main-heading {
-            text-align: center;
-            font-size: 5rem;
-            font-weight: bold;
-            color: #00ff00; /* Neon green for hacker effect */
-            animation: glitch 2s infinite;
-            position: relative;
-            margin-top: 150px;
-        }
-
-        .ak47 {
-            width: 150px;
-            position: absolute;
-            top: 30%;
-            transform: rotateY(180deg); /* Flip one AK-47 */
-        }
-
-        .ak47-left {
-            left: 20%;
-        }
-
-        .ak47-right {
-            right: 20%;
-        }
-
-        /* About Section */
-        .about-section {
-            margin: 50px auto;
-            text-align: left;
-            width: 80%;
-            font-size: 1.2rem;
-            color: #f0f0f0; /* Light gray for easier readability */
-            animation: typewriter 4s steps(60, end);
-            white-space: pre-wrap;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7); /* Transparent black background */
-            border: 1px solid #fff;
-            border-radius: 10px;
+            box-shadow: 0px 0px 20px #00ff00;
         }
 
         /* Footer */
@@ -147,24 +126,15 @@
         }
 
         /* Animations */
-        @keyframes glitch {
+        @keyframes pulse {
             0% {
-                text-shadow: 2px 2px #00ff00, -2px -2px #009900;
+                box-shadow: 0 0 5px #00ff00;
             }
             50% {
-                text-shadow: -2px -2px #00ff00, 2px 2px #009900;
+                box-shadow: 0 0 20px #00ff00;
             }
             100% {
-                text-shadow: 2px 2px #00ff00, -2px -2px #009900;
-            }
-        }
-
-        @keyframes typewriter {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
+                box-shadow: 0 0 5px #00ff00;
             }
         }
     </style>
@@ -175,35 +145,16 @@
 
     <!-- Title Bar -->
     <div class="title-bar">
+        <img src="https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480" alt="AK-47">
         <div class="site-title">GHOST</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="https://github.com/ghost-IN-coder" target="_blank">GitHub</a>
-        </div>
     </div>
 
-    <!-- Main Heading -->
-    <div>
-        <img src="https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480" alt="AK-47" class="ak47 ak47-left">
-        <h1 class="main-heading">GHOST</h1>
-        <img src="https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480" alt="AK-47" class="ak47 ak47-right">
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <img src="profile.jpg" alt="Ghost-IN-Coder" class="profile-img">
+        <div class="profile-name">Ghost-IN-Coder</div>
+        <button class="profile-button" onclick="window.open('https://github.com/ghost-IN-coder', '_blank')">View My GitHub</button>
     </div>
-
-    <!-- About Section -->
-    <div id="about" class="about-section">
-        👋 Hi there! I am <strong>Ghost-IN-Coder</strong>, a passionate developer and Mathematics enthusiast. <br>
-        I enjoy solving complex problems and creating elegant solutions. <br><br>
-        🔥 <strong>What I believe:</strong><br>
-        - The world of code is infinite. Keep exploring.<br>
-        - Challenges are opportunities for growth.<br>
-        - Always be curious and hungry to learn.<br><br>
-        💻 Let's build, break, and innovate together! 🚀
-    </div>
-
-    <!-- Profile Button -->
-    <button class="profile-button" onclick="window.open('https://github.com/ghost-IN-coder', '_blank')">
-        View My GitHub
-    </button>
 
     <!-- Footer -->
     <footer>
