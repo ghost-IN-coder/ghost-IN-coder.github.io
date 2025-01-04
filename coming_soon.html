@@ -17,43 +17,26 @@
             background-color: #000;
             color: #00ff00;
             font-family: 'Courier New', monospace;
-            text-align: center;
-            padding: 50px;
             background-image: url('https://i.pinimg.com/originals/2c/e4/d0/2ce4d0614263f4d25507dd339137a8a8.gif');
             background-size: cover;
             background-position: center;
             min-height: 100vh;
-            opacity: 0.3; /* Translucent effect */
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        /* Header Section */
-        .header {
+            opacity: 0.5;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            padding: 50px;
+            justify-content: flex-start;
+            padding-top: 20px;
         }
 
-        .header img {
+        /* Profile Drawing */
+        .profile-drawing {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             border: 3px solid #00ff00;
+            margin-bottom: 20px;
             animation: pulse 2s infinite;
-        }
-
-        .header h1 {
-            color: #00ff00;
-            font-size: 2rem;
-            margin-left: 20px;
-            font-weight: bold;
-            text-shadow: 0 0 10px #00ff00;
         }
 
         @keyframes pulse {
@@ -68,98 +51,51 @@
             }
         }
 
-        /* Content Section */
-        .content {
-            margin-top: 40px;
-            font-size: 1.2rem;
+        /* Heading */
+        h1 {
             color: #00ff00;
-            animation: typing 3s steps(50) 1s 1 normal both;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 2px solid #00ff00;
-            display: inline-block;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
         }
 
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-
+        /* Project Guide Section */
         .project-guide {
-            margin-top: 30px;
             font-size: 1.2rem;
-            line-height: 1.5;
             color: #00ff00;
+            margin-top: 30px;
+            padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
-            padding: 30px;
             border-radius: 10px;
             max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
             box-shadow: 0 0 10px #00ff00;
         }
 
         .project-guide h2 {
-            color: #00ff00;
             font-size: 2rem;
-            margin-bottom: 10px;
         }
 
         .project-guide p {
             font-size: 1rem;
             line-height: 1.5;
         }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 1rem;
-        }
     </style>
 </head>
 <body>
-
-    <!-- Header with Profile Drawing -->
-    <div class="header">
-        <img src="profile.jpg" alt="Ghost-IN-Coder">
-        <h1>Ghost Projects</h1>
+    <!-- Profile Drawing -->
+    <div class="profile-drawing">
+        <!-- Add a profile image or drawing here -->
+        <img src="profile.jpg" alt="Profile Drawing" style="width: 100%; height: 100%; border-radius: 50%;">
     </div>
 
-    <!-- Content with Typing Effect -->
-    <div class="content">
-        Building an OS from Scratch...
-    </div>
+    <!-- Heading -->
+    <h1>Coming Soon: Ghost Projects</h1>
 
     <!-- Project Guide Section -->
     <div class="project-guide">
-        <h2>How to Build an Operating System</h2>
-        <p>Building your own operating system is not only fun but also an incredibly challenging task. The process involves:</p>
-        <ul>
-            <li><strong>Step 1: Learn the Basics</strong> - Before you dive into OS development, it's essential to have a good understanding of low-level programming languages like C and Assembly.</li>
-            <li><strong>Step 2: Set Up Your Environment</strong> - You will need a cross-compiler to build the OS code. Setting up a proper build environment is crucial for the development of your OS.</li>
-            <li><strong>Step 3: Create a Bootloader</strong> - The bootloader is responsible for loading the kernel into memory when the computer is powered on.</li>
-            <li><strong>Step 4: Develop the Kernel</strong> - The kernel is the core part of your operating system. You'll need to write the kernel in C or Assembly, with functions like memory management, process scheduling, and handling system calls.</li>
-            <li><strong>Step 5: Implement File Systems</strong> - After the kernel, you'll implement the file system, allowing the OS to manage files and directories.</li>
-            <li><strong>Step 6: Add User Interface (UI)</strong> - Building a user-friendly interface is optional, but a graphical user interface (GUI) makes the OS much more appealing and usable.</li>
-            <li><strong>Step 7: Test and Debug</strong> - Testing is key to success. Continuously debug your OS to remove errors and improve performance.</li>
-        </ul>
-        <p>Developing an OS is a big task, but with persistence and patience, it is totally possible!</p>
+        <h2>How to Build an OS</h2>
+        <p>We are currently working on building an OS from scratch...</p>
+        <p>Stay tuned for more updates!</p>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Ghost-IN-Coder. Made with 💻 and ☕.
-    </footer>
-
 </body>
 </html>
