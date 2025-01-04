@@ -84,28 +84,6 @@
             cursor: pointer;
         }
 
-        /* Coming Soon Section */
-        #coming-soon {
-            display: none;
-            padding: 20px;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.9);
-            color: #00ff00;
-            border-radius: 10px;
-            margin-top: 10px;
-            transition: all 0.5s ease-in-out;
-        }
-
-        #coming-soon h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .projects {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
         /* Profile Section */
         .profile-section {
             display: flex;
@@ -158,26 +136,6 @@
             box-shadow: 0px 0px 20px #00ff00;
         }
 
-        /* Typing Effect */
-        .typing-effect {
-            font-size: 1.5rem;
-            color: #00ff00;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid #00ff00;
-            width: 0;
-            animation: typing 4s steps(40) 1s 1 normal both, blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes typing {
-            0% { width: 0; }
-            100% { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            50% { border-color: transparent; }
-        }
-
         /* Footer */
         footer {
             background-color: #555;
@@ -216,17 +174,7 @@
     <!-- Title Bar -->
     <div class="title-bar">
         <img src="https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480" alt="AK-47">
-        <div class="site-title" onclick="toggleComingSoon()">GHOST Portfolio</div>
-    </div>
-
-    <!-- Coming Soon Section -->
-    <div id="coming-soon">
-        <h2>Coming Soon</h2>
-        <div class="projects">
-            <p>🚀 Project: Building an OS</p>
-            <p>⚙️ Aiming for a lightweight, customizable Operating System.</p>
-            <p>💻 Stay tuned for development updates.</p>
-        </div>
+        <div class="site-title" onclick="window.location.href='coming_soon.html'">GHOST Portfolio</div>
     </div>
 
     <!-- Profile Section -->
@@ -262,12 +210,6 @@
         window.onload = () => {
             updateLoadingScreen();
         };
-
-        // Toggle Coming Soon Section
-        function toggleComingSoon() {
-            const comingSoonSection = document.getElementById('coming-soon');
-            comingSoonSection.style.display = comingSoonSection.style.display === 'block' ? 'none' : 'block';
-        }
     </script>
 </body>
 </html>
