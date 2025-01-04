@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GHOST Portfolio</title>
+    <title>Ghost Portfolio</title>
     <style>
         /* General Reset */
         * {
@@ -42,9 +42,9 @@
         /* Body */
         body {
             cursor: none;
-            background-color: #000; /* Black background */
+            background-color: #000;
             color: #fff;
-            font-family: 'Courier New', monospace; /* Hacker-style font */
+            font-family: 'Courier New', monospace;
             overflow-x: hidden;
             animation: fadeIn 2s ease-in;
         }
@@ -96,6 +96,56 @@
             margin-left: 10px;
         }
 
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00ff00;
+            animation: pulse 2s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-name {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #00ff00;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .profile-button {
+            margin-top: 20px;
+            background-color: #00ff00;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px #00ff00;
+            transition: all 0.3s ease;
+        }
+
+        .profile-button:hover {
+            background-color: #fff;
+            color: #00ff00;
+            box-shadow: 0px 0px 20px #00ff00;
+        }
+
         /* Coming Soon Section */
         #coming-soon {
             padding: 50px 20px;
@@ -118,17 +168,18 @@
             font-style: italic;
             font-size: 1.5rem;
             color: #00ff00;
-            animation: fadeInUp 2s ease-in;
         }
 
-        @keyframes fadeInUp {
+        /* Animations */
+        @keyframes pulse {
             0% {
-                opacity: 0;
-                transform: translateY(20px);
+                box-shadow: 0 0 5px #00ff00;
+            }
+            50% {
+                box-shadow: 0 0 20px #00ff00;
             }
             100% {
-                opacity: 1;
-                transform: translateY(0);
+                box-shadow: 0 0 5px #00ff00;
             }
         }
     </style>
@@ -138,9 +189,6 @@
     <div id="loading">
         Decrypting<span>...</span>
     </div>
-
-    <!-- Background -->
-    <div class="bg-code"></div>
 
     <!-- Title Bar -->
     <div class="title-bar">
