@@ -47,6 +47,8 @@
             font-family: 'Courier New', monospace;
             overflow-x: hidden;
             animation: fadeIn 2s ease-in;
+            background-image: url('https://i.pinimg.com/originals/2c/e4/d0/2ce4d0614263f4d25507dd339137a8a8.gif');
+            background-size: cover;
         }
 
         @keyframes fadeIn {
@@ -94,6 +96,26 @@
             color: #00ff00;
             font-weight: bold;
             margin-left: 10px;
+        }
+
+        /* Coming Soon Section */
+        #coming-soon {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #00ff00;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        #coming-soon h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .projects {
+            font-size: 1.2rem;
         }
 
         /* Profile Section */
@@ -146,28 +168,24 @@
             box-shadow: 0px 0px 20px #00ff00;
         }
 
-        /* Coming Soon Section */
-        #coming-soon {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        #coming-soon h2 {
-            font-size: 2.5rem;
-            color: #00ff00;
-            margin-bottom: 20px;
-        }
-
-        .projects {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .quote {
-            font-style: italic;
+        /* Typing Effect */
+        .typing-effect {
             font-size: 1.5rem;
             color: #00ff00;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #00ff00;
+            width: 0;
+            animation: typing 4s steps(40) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            50% { border-color: transparent; }
         }
 
         /* Animations */
@@ -193,29 +211,25 @@
     <!-- Title Bar -->
     <div class="title-bar">
         <img src="https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480" alt="AK-47">
-        <div class="site-title">GHOST Portfolio</div>
-    </div>
-
-    <!-- Profile Section -->
-    <div class="profile-section">
-        <img src="profile.jpg" alt="Ghost-IN-Coder" class="profile-img">
-        <div class="profile-name">Ghost-IN-Coder</div>
-        <button class="profile-button" onclick="window.open('https://github.com/ghost-IN-coder', '_blank')">View My GitHub</button>
+        <div class="site-title" onclick="toggleComingSoon()">GHOST Portfolio</div>
     </div>
 
     <!-- Coming Soon Section -->
     <div id="coming-soon">
         <h2>Coming Soon</h2>
         <div class="projects">
-            <ul>
-                <li>🚀 Building an AI-driven Portfolio Generator</li>
-                <li>⚙️ Creating an Advanced Automation Toolkit</li>
-                <li>🛡️ Developing a Cybersecurity Monitoring Tool</li>
-                <li>📱 Launching a Responsive Mobile App for Coders</li>
-                <li>🌌 Experimenting with Quantum Computing Algorithms</li>
-            </ul>
+            <p>🚀 Project: Building an OS</p>
+            <p>⚙️ Aiming for a lightweight, customizable Operating System.</p>
+            <p>💻 Stay tuned for development updates.</p>
         </div>
-        <p class="quote">"The best way to predict the future is to invent it." – Alan Kay</p>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <img src="profile.jpg" alt="Ghost-IN-Coder" class="profile-img">
+        <div class="profile-name">Ghost-IN-Coder</div>
+        <div class="typing-effect">Hi! I am Ghost, a passionate coder working on cool projects.</div>
+        <button class="profile-button" onclick="window.open('https://github.com/ghost-IN-coder', '_blank')">View My GitHub</button>
     </div>
 
     <!-- Footer -->
@@ -229,6 +243,12 @@
             document.getElementById('loading').style.display = 'none';
         };
 
+        // Toggle Coming Soon Section
+        function toggleComingSoon() {
+            const comingSoonSection = document.getElementById('coming-soon');
+            comingSoonSection.style.display = comingSoonSection.style.display === 'block' ? 'none' : 'block';
+        }
+
         // Dynamic Cursor
         const cursor = document.createElement('div');
         cursor.classList.add('cursor');
@@ -237,14 +257,6 @@
             cursor.style.left = `${e.pageX}px`;
             cursor.style.top = `${e.pageY}px`;
         });
-
-        // Dynamic Title
-        const titles = ["Ghost Portfolio", "Code. Create. Inspire.", "Welcome to Ghost's World"];
-        let i = 0;
-        setInterval(() => {
-            document.title = titles[i];
-            i = (i + 1) % titles.length;
-        }, 3000);
     </script>
 </body>
 </html>
