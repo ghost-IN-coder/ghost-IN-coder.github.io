@@ -3,148 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - Ghost Projects</title>
+    <title>Coming Soon - Ghost Portfolio</title>
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body */
         body {
             background-color: #000;
             color: #00ff00;
             font-family: 'Courier New', monospace;
-            background-image: url('https://i.pinimg.com/originals/2c/e4/d0/2ce4d0614263f4d25507dd339137a8a8.gif');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 50px;
-            overflow: hidden;
-            opacity: 0.8;
-        }
-
-        /* Profile Photo */
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background-color: #00ff00;
-            margin-bottom: 20px;
-            border: 3px solid #00ff00;
-        }
-
-        /* Content Section */
-        .content {
             text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            max-width: 90%;
-            box-shadow: 0 0 10px #00ff00;
+            padding: 50px;
         }
 
-        .content h1 {
+        .projects {
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+
+        h1 {
             font-size: 3rem;
             margin-bottom: 20px;
         }
 
-        .project-guide {
-            font-size: 1.2rem;
-            color: #00ff00;
-            margin-top: 30px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            max-width: 80%;
-            box-shadow: 0 0 10px #00ff00;
-            margin-top: 20px;
-        }
-
-        .project-guide h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .project-guide p {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        pre {
-            background-color: #111;
-            padding: 10px;
-            border-radius: 5px;
-            color: #00ff00;
-            font-size: 1rem;
-            overflow-x: auto;
-        }
-
-        /* Title Bar */
-        header {
-            width: 100%;
+        footer {
             position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            color: #00ff00;
-            padding: 10px;
-            font-size: 1.5rem;
+            bottom: 0;
+            width: 100%;
+            background-color: #555;
+            color: #fff;
             text-align: center;
-            z-index: 100;
-            font-family: 'Courier New', monospace;
-        }
-
-        /* Hover Effect for Profile Photo */
-        .profile-photo:hover {
-            transform: scale(1.1);
-            transition: transform 0.3s ease-in-out;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-
-    <!-- Header (Title Bar) -->
-    <header>
-        <span>Ghost Projects</span>
-    </header>
-
-    <!-- Profile Photo -->
-    <div class="profile-photo">
-        <!-- Replace this with your actual profile image -->
+    <h1>Coming Soon!</h1>
+    <div class="projects">
+        <p>🚀 Project: Building an OS</p>
+        <p>⚙️ Aiming for a lightweight, customizable Operating System.</p>
+        <p>💻 Stay tuned for development updates.</p>
     </div>
 
-    <!-- Content Section -->
-    <div class="content">
-        <h1>How to Build an OS from Scratch</h1>
-        <div class="project-guide">
-            <h2>Step-by-Step Guide</h2>
-            <p>Building an operating system from scratch requires understanding the low-level details of computer architecture and hardware. We will guide you through the basics of:</p>
-            <ul>
-                <li>Setting up a virtual machine to test your OS</li>
-                <li>Writing bootloaders and kernel</li>
-                <li>Understanding file systems</li>
-                <li>Implementing system calls</li>
-                <li>Memory management</li>
-            </ul>
-            <p>For example, we'll demonstrate how to:</p>
-            <pre><code>
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    printf("Welcome to Ghost OS!\n");
-    return 0;
-}
-            </code></pre>
-        </div>
-    </div>
-
+    <footer>
+        &copy; 2025 Ghost-IN-Coder. Made with 💻 and ☕.
+    </footer>
 </body>
 </html>
