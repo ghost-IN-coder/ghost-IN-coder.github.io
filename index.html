@@ -41,7 +41,7 @@
 
         /* Body */
         body {
-            cursor: none;
+            cursor: default;
             background-color: #000;
             color: #fff;
             font-family: 'Courier New', monospace;
@@ -58,18 +58,6 @@
             100% {
                 opacity: 1;
             }
-        }
-
-        /* Cursor */
-        .cursor {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background-color: #00ff00;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
         }
 
         /* Title Bar */
@@ -107,6 +95,7 @@
             color: #00ff00;
             border-radius: 10px;
             margin-top: 10px;
+            transition: all 0.5s ease-in-out;
         }
 
         #coming-soon h2 {
@@ -116,6 +105,7 @@
 
         .projects {
             font-size: 1.2rem;
+            margin-bottom: 20px;
         }
 
         /* Profile Section */
@@ -126,6 +116,7 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .profile-img {
@@ -147,6 +138,7 @@
             color: #00ff00;
             font-weight: bold;
             text-shadow: 0 0 10px #00ff00;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .profile-button {
@@ -205,7 +197,7 @@
 <body>
     <!-- Loading Screen -->
     <div id="loading">
-        Decrypting<span>...</span>
+        <div id="progress">Loading 0%</div>
     </div>
 
     <!-- Title Bar -->
@@ -238,9 +230,24 @@
     </footer>
 
     <script>
-        // Loading Screen
+        // Loading Screen with Progress
+        let progress = 0;
+        const loadingElement = document.getElementById('loading');
+        const progressText = document.getElementById('progress');
+
+        function updateLoadingScreen() {
+            if (progress < 100) {
+                progress++;
+                progressText.innerText = `Loading ${progress}%`;
+                setTimeout(updateLoadingScreen, 30); // Simulate loading process
+            } else {
+                loadingElement.style.display = 'none'; // Hide loading screen
+            }
+        }
+
+        // Start the loading animation
         window.onload = () => {
-            document.getElementById('loading').style.display = 'none';
+            updateLoadingScreen();
         };
 
         // Toggle Coming Soon Section
@@ -248,15 +255,6 @@
             const comingSoonSection = document.getElementById('coming-soon');
             comingSoonSection.style.display = comingSoonSection.style.display === 'block' ? 'none' : 'block';
         }
-
-        // Dynamic Cursor
-        const cursor = document.createElement('div');
-        cursor.classList.add('cursor');
-        document.body.appendChild(cursor);
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = `${e.pageX}px`;
-            cursor.style.top = `${e.pageY}px`;
-        });
     </script>
 </body>
 </html>
