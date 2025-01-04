@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghost Projects</title>
+    <title>Ghost 💀</title>
     <style>
         /* General Reset */
         * {
@@ -31,7 +31,13 @@
         }
 
         #loading span {
-            font-size: 1.5rem;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
 
         /* Body */
@@ -43,9 +49,7 @@
             animation: fadeIn 2s ease-in;
             background-image: url('https://i.pinimg.com/originals/2c/e4/d0/2ce4d0614263f4d25507dd339137a8a8.gif');
             background-size: cover;
-            background-position: center;
             min-height: 100vh;
-            opacity: 0.3; /* Translucent effect */
         }
 
         @keyframes fadeIn {
@@ -89,7 +93,6 @@
             min-height: 100vh;
             text-align: center;
             animation: fadeIn 2s ease-in-out;
-            margin-top: 80px; /* Fix for overlapping title bar */
         }
 
         .profile-img {
@@ -160,7 +163,7 @@
     </style>
 </head>
 <body>
-    <!-- Loading Screen without GIF -->
+    <!-- Loading Screen -->
     <div id="loading">
         <div id="progress">
             <span>Loading...</span><br>
@@ -171,7 +174,7 @@
     <!-- Title Bar -->
     <div class="title-bar">
         <img src="https://www.shutterstock.com/shutterstock/videos/1100531649/thumb/1.jpg?ip=x480" alt="AK-47">
-        <div class="site-title" onclick="window.location.href='coming_soon.html'">Ghost Projects</div>
+        <div class="site-title" onclick="window.location.href='coming_soon.html'">GHOST Portfolio</div>
     </div>
 
     <!-- Profile Section -->
