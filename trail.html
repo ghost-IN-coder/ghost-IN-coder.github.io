@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top-Notch Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #1f1c2c, #928dab);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 10%;
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1f1c2c;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 data-aos="zoom-in">Welcome to the Future</h1>
+        <p data-aos="fade-up">Crafting experiences like never before</p>
+    </header>
+
+    <section class="features">
+        <div class="feature" data-aos="flip-left">
+            <h2>Interactive Design</h2>
+            <p>Smooth and engaging user interfaces.</p>
+        </div>
+        <div class="feature" data-aos="flip-left">
+            <h2>Animations</h2>
+            <p>Dynamic animations to bring your ideas to life.</p>
+        </div>
+        <div class="feature" data-aos="flip-left">
+            <h2>Cutting-Edge Tech</h2>
+            <p>Built with the latest tools and frameworks.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Hack the Future. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
